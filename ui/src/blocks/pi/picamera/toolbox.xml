@@ -1,0 +1,6 @@
+<category name="PiCamera" colour="#1B173C" iconclass="blocklyTreeIconCustom camera">
+
+    <label text="PiCamera" web-class="myLabelStyle"></label>
+    <block type="import_picamera"></block>
+    
+</category>  

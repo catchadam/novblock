@@ -1,0 +1,28 @@
+name: Node CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [6.10.2]
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: npm install, build, and test
+      run: |
+        ./tarball-create.sh armv6l
+        scp edublocks-armv6l.tar.xz Josh@88.150.156.196:downloads/connect
+        cat auto-installer-connect.sh | sed 's/downloads\//downloads\/connect\//g' | ssh Josh@88.150.156.196 'cat > downloads/connect/auto-installer-connect.sh'
+        rsync -rv --include node_modules/picnic --exclude 'node_modules/*' ui/index.html ui/node_modules ui/dist ui/picnic ui/css ui/lib ui/fonts ui/images ui/images/undefinedsprites.png ui/blockly Josh@88.150.156.196:/var/www/app.edublocks.org/html
+
+      env:
+        CI: true
