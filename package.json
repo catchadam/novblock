@@ -1,19 +1,19 @@
 {
-    "name": "edublocks",
+    "name": "novblock",
     "version": "0.0.5-connect",
-    "description": "EduBlocks is a visual block based programming tool",
+    "description": "Novblocks is a visual block based programming tool",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/AllAboutCode/EduBlocks.git"
+        "url": "git+https://github.com/catchadam/novblock.git"
     },
     "author": "",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/AllAboutCode/EduBlocks/issues"
+        "url": "https://github.com/catchadam/novblock/issues"
     },
-    "homepage": "https://github.com/AllAboutCode/EduBlocks#readme"
+    "homepage": "https://github.com/catchadam/novblock/readme"
 }
